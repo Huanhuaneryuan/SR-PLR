@@ -3,7 +3,7 @@
 
 This is the implementation of our experiments in the paper.
 
-This implementation contains the datasets, model source code and config used in SR-PLR. Our codes refer to the libraries used in RecBole.
+This implementation contains the datasets, model source code and config used in SR-PLR. Our codes refer to the libraries used in [RecBole](https://github.com/RUCAIBox/RecBole).
 
 
 ## Environments
