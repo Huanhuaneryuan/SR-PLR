@@ -1,4 +1,3 @@
-# SR-PLR
 # Sequential Recommendation with Probabilistic Logical Reasoning (SR-PLR)
 
 This is the implementation for IJCAI 2023 paper.
