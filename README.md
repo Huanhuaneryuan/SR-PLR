@@ -5,22 +5,6 @@ This is the implementation of our experiments in the paper.
 
 This implementation contains the datasets, model source code and config used in SR-PLR. Our codes refer to the libraries used in RecBole.
 
-The project based on recbole has a structure as below:
-
-├── RecBole
-│   ├── dataset
-│   ├── recbole
-│   │    ├── model
-│   │    │    ├── sequential_recommender
-│   │    │    │     ├── mymodel.py
-│   │    ├── properties
-│   │    │    ├── overall.yaml
-│   │    │    ├── model
-│   │    │    │     ├── mymodel.yaml
-│   ├── run_recbole.py
-│   ├── command.sh
-│   ├── README.md
-│   ├── requirements.txt
 
 ## Environments
 
