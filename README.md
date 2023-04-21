@@ -24,8 +24,8 @@ Python 3.7.3
 ## References
 
 This paper mainly referes RecBole and BetaE. Thanks for your nice works! 
-
->@inproceedings{ren_beta_2020,
+```bibtex
+@inproceedings{ren_beta_2020,
   author    = {Hongyu Ren and
                Jure Leskovec},
   title     = {Beta embeddings for multi-hop logical reasoning in knowledge graphs},
@@ -34,10 +34,11 @@ This paper mainly referes RecBole and BetaE. Thanks for your nice works!
   year      = {2020}
 }
 
->@inproceedings{recbole,
+@inproceedings{recbole,
   author    = {Wayne Xin Zhao and Shanlei Mu and Yupeng Hou and Zihan Lin and Yushuo Chen and Xingyu Pan and Kaiyuan Li and Yujie Lu and Hui Wang and Changxin Tian and Yingqian Min and Zhichao Feng and Xinyan Fan and Xu Chen and Pengfei Wang and Wendi Ji and Yaliang Li and Xiaoling Wang and Ji{-}Rong Wen},
   title     = {RecBole: Towards a Unified, Comprehensive and Efficient Framework for Recommendation Algorithms},
   booktitle = {{CIKM} 2021},
   pages     = {4653--4664},
   year      = {2021}
 }
+```
