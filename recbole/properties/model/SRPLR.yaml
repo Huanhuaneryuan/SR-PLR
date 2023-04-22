@@ -1,0 +1,61 @@
+# dataset config : Sequential Recommendation
+USER_ID_FIELD: user_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+ITEM_LIST_LENGTH_FIELD: item_length
+LIST_SUFFIX: _list
+MAX_ITEM_LIST_LENGTH: 50
+load_col:
+    inter: ['user_id', 'item_id', 'rating', 'timestamp']
+base_model: 'SASRec' # SASRec, GRU4Rec, Caser
+reg_weight: 5e-3            # (float) The L2 regularization weight.  # 1e-2 for sports 5e-3 yelp, 1e-8 for sasrectoys 1e-9for other
+neg_sam_num: 3                # (int) The number of logical negative samples. # 3 for sports yelp toys
+bpr_weight: 0.5                # (float) The logical bpr weight.  # 0.5 for sports beauty yelp toys
+tau: 0.05                       # (float) The regularization of conjunction attention. # 0.05 for sports beauty yelp toys
+learning_rate: 0.002           # 0.001 for sports beauty  0.002 for yelp sasrec toys,  0.005 for other toys
+
+# model config
+embedding_size: 64
+hidden_size: 64
+num_layers: 1
+dropout_prob: 0.4
+loss_type: 'BPR'
+n_heads: 2
+hidden_dropout_prob: 0.5
+attn_dropout_prob: 0.5
+inner_size: 256
+hidden_act: 'gelu'  # "gelu": self.gelu,"relu": fn.relu,"swish": self.swish, "tanh": torch.tanh, "sigmoid": torch.sigmoid
+layer_norm_eps: 1e-12
+n_layers: 2
+initializer_range: 0.02
+gamma: 0.0
+
+
+# Training and evaluation config
+epochs: 50
+train_batch_size: 3072
+eval_batch_size: 4096
+neg_sampling: ~
+#early_stop: F
+eval_args:
+    group_by: user
+    order: TO
+    split: {'LS': 'valid_and_test'}
+    mode: full
+metrics: ['Hit', 'NDCG']
+topk: [5, 10]
+valid_metric: Hit@10
+metric_decimal_place: 4
+
+train_neg_sample_args:         # (dict) Negative sampling configuration for model training.
+  distribution: uniform         # (str) The distribution of negative items.
+  sample_num: 1                 # (int) The sampled num of negative items.
+  alpha: 1.0                    # (float) The power of sampling probability for popularity distribution.
+  dynamic: False                # (bool) Whether to use dynamic negative sampling.
+  candidate_num: 1              # (int) The number of candidate negative items when dynamic negative sampling.
+
+#  caser
+
+nv: 4                           # (int) The number of vertical Convolutional filters.
+nh: 8                           # (int) The number of horizontal Convolutional filters.
+
