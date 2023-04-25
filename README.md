@@ -1,6 +1,6 @@
 # Sequential Recommendation with Probabilistic Logical Reasoning (SR-PLR)
 
-This is the implementation for IJCAI 2023 paper.
+This is the implementation for IJCAI 2023 [paper]([https://github.com/RUCAIBox/RecBole](https://arxiv.org/abs/2304.11383)).
 
 This implementation contains the datasets, model source code and config used in SR-PLR. Our codes refer to the libraries used in [RecBole](https://github.com/RUCAIBox/RecBole).
 
